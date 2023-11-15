@@ -1,0 +1,2 @@
+ignore:
+  - 'ispdb_data/**/*'
