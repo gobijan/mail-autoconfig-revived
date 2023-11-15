@@ -1,5 +1,4 @@
 module MailAutoconfig
-
   # Email address that we're going to investigate
   class EmailAddress
     attr_reader :address
@@ -26,22 +25,20 @@ module MailAutoconfig
     # Useful for usage with the %EMAILLOCALPART% substitution.
     # @return [String] the local part of the email address
     def local_part
-      @local_part ||= @address.split('@', 2).first
+      @local_part ||= @address.split("@", 2).first
     end
 
     # The domain of the email address (the part after the @ symbol)
     # @return [String] the domain of the email address
     def domain
-      @domain ||= @address.split('@', 2).last
+      @domain ||= @address.split("@", 2).last
     end
-  
+
     # Finds the primary MX domain for this address. Would change gmail-smtp-in.l.google.com to google.com
     # @return [String] the domain of the pimary MX record for this address
     def primary_mx_domain
-      @primary_mx_domain ||= begin 
-        # Not very nice to 2nd level domains
-        mx_records.first.split(".")[-2..-1].join(".") unless mx_records.empty?
-      end
+      # Not very nice to 2nd level domains
+      @primary_mx_domain ||= (mx_records.first.split(".")[-2..-1].join(".") unless mx_records.empty?)
     end
 
     private
@@ -49,8 +46,7 @@ module MailAutoconfig
     # Finds MX records for the associated email address, ordered by preference.
     # @return [Array] MX records for this email address
     def mx_records
-      @mx_records ||= Resolv::DNS.open.getresources(domain, Resolv::DNS::Resource::IN::MX).sort_by(&:preference).map{ |r| r.exchange.to_s }
+      @mx_records ||= Resolv::DNS.open.getresources(domain, Resolv::DNS::Resource::IN::MX).sort_by(&:preference).map { |r| r.exchange.to_s }
     end
-
   end
 end

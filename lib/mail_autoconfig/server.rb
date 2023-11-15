@@ -1,5 +1,4 @@
 module MailAutoconfig
-
   # Superclass for {IncomingServer} and {OutgoingServer}.
   # Never used directly.
   class Server
@@ -15,23 +14,23 @@ module MailAutoconfig
     # Returns the protocol of the mail server e.g. `smtp`, `pop3`, `imap`
     # @return [String] The protocol for the server
     def protocol
-      @protocol ||= config.attr('type')
+      @protocol ||= config.attr("type")
     end
 
     # @return [String] The hostname for this server
     def hostname
-      @hostname ||= config.xpath('hostname').first.content
+      @hostname ||= config.xpath("hostname").first.content
     end
 
     # @return [Integer] The port to connect ot this server on
     def port
-      @port ||= config.xpath('port').first.content.to_i
+      @port ||= config.xpath("port").first.content.to_i
     end
 
     # The connection type for this server. `plain`, `STARTTLS`, `SSL` are acceptable
     # @return [String] The connection type
     def socket_type
-      @socket_type ||= config.xpath('socketType').first.content
+      @socket_type ||= config.xpath("socketType").first.content
     end
 
     # The username for this mailbox, combines {username_format} and [EmailAddress] details
@@ -39,9 +38,9 @@ module MailAutoconfig
     def username
       @username ||= begin
         name = username_format
-        name.gsub! '%EMAILADDRESS%', client_config.email_address.address
-        name.gsub! '%EMAILLOCALPART%', client_config.email_address.local_part
-        name.gsub! '%EMAILDOMAIN%', client_config.email_address.domain
+        name.gsub! "%EMAILADDRESS%", client_config.email_address.address
+        name.gsub! "%EMAILLOCALPART%", client_config.email_address.local_part
+        name.gsub! "%EMAILDOMAIN%", client_config.email_address.domain
         name
       end
     end
@@ -54,14 +53,14 @@ module MailAutoconfig
     #
     # @return [String] the username format
     def username_format
-      @username_format ||= config.xpath('username').first.content
+      @username_format ||= config.xpath("username").first.content
     end
 
     # The authentication type for this server. Valid responses:
     # `password-cleartext`, `NTLM`, `GSSAPI`, `client-IP-address`, `TLS-client-cert`, `none`
     # @return [String] the authentication method for this server
     def authentication
-      @authentication ||= config.xpath('authentication').first.content
+      @authentication ||= config.xpath("authentication").first.content
     end
   end
 

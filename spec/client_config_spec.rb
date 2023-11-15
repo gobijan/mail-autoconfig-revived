@@ -1,14 +1,13 @@
-require 'mail_autoconfig'
+require "mail_autoconfig"
 
 describe MailAutoconfig::ClientConfig do
-
   context "from static config" do
-    let(:client_config) { MailAutoconfig::ClientConfig.from_file(File.expand_path(File.join(__FILE__, '../', 'examples', 'client_config_yahoo.xml'))) }
+    let(:client_config) { MailAutoconfig::ClientConfig.from_file(File.expand_path(File.join(__FILE__, "../", "examples", "client_config_yahoo.xml"))) }
 
     it "reads a service name" do
       expect(client_config.name).to eq("Yahoo! Mail")
     end
-    
+
     it "reads a short name" do
       expect(client_config.short_name).to eq("Yahoo")
     end
@@ -18,19 +17,17 @@ describe MailAutoconfig::ClientConfig do
     end
 
     it "reads domain aliases" do
-      expect(client_config.domains).to include('yahoo.com', 'yahoo.co.uk')
+      expect(client_config.domains).to include("yahoo.com", "yahoo.co.uk")
     end
 
-    it 'matches valid domains' do
-      expect(client_config.valid_for_domain?('yahoo.it')).to be(true)
+    it "matches valid domains" do
+      expect(client_config.valid_for_domain?("yahoo.it")).to be(true)
     end
 
     it "doesn't match invalid domains" do
-      expect(client_config.valid_for_domain?('googlemail.com')).to be(false)
+      expect(client_config.valid_for_domain?("googlemail.com")).to be(false)
     end
-
   end
-
 
   context "automatically detects domains" do
     it "from local files" do
@@ -45,6 +42,4 @@ describe MailAutoconfig::ClientConfig do
       expect(MailAutoconfig::ClientConfig.search_autoconfig_domain("swcp.com")).to be_a(MailAutoconfig::ClientConfig)
     end
   end
-
-
 end

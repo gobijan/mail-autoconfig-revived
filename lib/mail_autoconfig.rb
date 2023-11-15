@@ -1,17 +1,16 @@
-require 'nokogiri'
-require 'faraday'
-require 'resolv'
+require "nokogiri"
+require "faraday"
+require "resolv"
 
 require "mail_autoconfig/version"
 require "mail_autoconfig/client_config"
 require "mail_autoconfig/server"
 require "mail_autoconfig/email_address"
 
-# Module to lookup mailbox autoconfiguration according to Thunderbird 
+# Module to lookup mailbox autoconfiguration according to Thunderbird
 # spec (https://wiki.mozilla.org/Thunderbird:Autoconfiguration:ConfigFileFormat)
 # and guidelines (https://developer.mozilla.org/en-US/docs/Mozilla/Thunderbird/Autoconfiguration)
 module MailAutoconfig
-
   # The path for the locally stored Thunderbird ISPDB configurations
   # @return [String] absolute path to the ispdb data directory
   def self.local_ispdb_path
@@ -31,5 +30,4 @@ module MailAutoconfig
   def self.for_address(email)
     MailAutoconfig::EmailAddress.new(email).client_config
   end
-
 end
