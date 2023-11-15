@@ -1,4 +1,5 @@
 require "mail_autoconfig"
+require "debug"
 
 describe MailAutoconfig::EmailAddress do
   context "example@gmail.com" do
@@ -28,7 +29,7 @@ describe MailAutoconfig::EmailAddress do
   context "example@atechmedia.com" do
     let(:address) { MailAutoconfig::EmailAddress.new("example@atechmedia.com") }
     it "should not have a detectable configuration" do
-      expect(address.client_config).to be_false
+      expect(address.client_config).to be false
     end
   end
 
@@ -42,11 +43,11 @@ describe MailAutoconfig::EmailAddress do
   context "example@veryunlikelydomain4567763332.com" do
     let(:address) { MailAutoconfig::EmailAddress.new("example@veryunlikelydomain4567763332.com") }
     it "should not return a configuration" do
-      expect(address.client_config).to be_false
+      expect(address.client_config).to be false
     end
 
     it "should not have a primary mx domain" do
-      expect(address.primary_mx_domain).to be_nil
+      expect(address.primary_mx_domain).to be nil
     end
   end
 end
