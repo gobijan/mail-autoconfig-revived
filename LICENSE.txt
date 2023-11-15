@@ -1,3 +1,4 @@
+Copyright (c) 2023 Bijan Rahnema
 Copyright (c) 2014 Dan Wentworth
 
 MIT License

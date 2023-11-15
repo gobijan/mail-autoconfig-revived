@@ -3,7 +3,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require "mail_autoconfig/version"
 
 Gem::Specification.new do |spec|
-  spec.name = "mail_autoconfig"
+  spec.name = "mail_autoconfig_revived"
   spec.version = MailAutoconfig::VERSION
   spec.authors = ["Bijan Rahnema, Dan Wentworth"]
   spec.email = ["bijan@screenisland.com"]
