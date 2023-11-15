@@ -18,9 +18,9 @@ module MailAutoconfig
   end
 
   # The URL to the canonical SVN repository containing the Thunderbird IPSDB
-  # @return [String] SVN repository location
-  def self.ispdb_svn_url
-    "https://autoconfig.thunderbird.net/v1.1/"
+  # @return [String] GIT repository location
+  def self.ispdb_github_url
+    "https://github.com/thunderbird/autoconfig"
   end
 
   # Fetch the client configuration for a given email address, if any.

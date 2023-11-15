@@ -1,6 +1,5 @@
 require "minitest/autorun"
 require "mail_autoconfig"
-# require 'debug'
 
 class EmailAddressTest < Minitest::Test
   def test_gmail_domain
