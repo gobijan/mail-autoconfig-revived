@@ -1,4 +1,6 @@
-# Mail Autoconfig
+# Mail Autoconfig Revived
+
+This fork revives mail_autoconfig, which was abandoned by the original author.
 
 A ruby gem to detect and parse any Thunderbird autoconfig file for a domain. Includes a copy of the Mozilla ISPDB.
 
@@ -12,7 +14,7 @@ to submit a patch in these cases.
 
 Add this line to your application's Gemfile:
 
-    gem 'mail_autoconfig'
+    gem 'mail_autoconfig_revived'
 
 And then execute:
 
@@ -20,7 +22,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install mail_autoconfig
+    $ gem install mail_autoconfig_revived
 
 ## Usage
 
@@ -49,7 +51,7 @@ just run the rake task `rake fetch_ispdb`.
 
 ## Contributing
 
-1. Fork it ( http://github.com/atech/mail_autoconfig/fork )
+1. Fork it ( https://github.com/gobijan/mail-autoconfig-revived/fork )
 2. Create your feature branch (`git checkout -b my-new-feature`)
 2. Run the test suite, check out haven't broken anything (`bundle exec rspec spec`)
 3. Commit your changes (`git commit -am 'Add some feature'`)

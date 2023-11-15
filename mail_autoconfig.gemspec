@@ -6,8 +6,8 @@ require 'mail_autoconfig/version'
 Gem::Specification.new do |spec|
   spec.name          = "mail_autoconfig"
   spec.version       = MailAutoconfig::VERSION
-  spec.authors       = ["Dan Wentworth"]
-  spec.email         = ["dan@atechmedia.com"]
+  spec.authors       = ["Bijan Rahnema, Dan Wentworth"]
+  spec.email         = ["bijan@screenisland.com"]
   spec.summary       = %q{Determine configuration details for a mailbox using Mozilla's ISPDB}
   spec.homepage      = ""
   spec.license       = "MIT"
@@ -17,11 +17,12 @@ Gem::Specification.new do |spec|
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ["lib"]
 
-  spec.add_dependency "nokogiri", "~> 1.6"
+  spec.add_dependency "nokogiri", "~> 1.15"
   spec.add_dependency "faraday"
-  spec.add_development_dependency "bundler", "~> 1.5"
+  spec.add_development_dependency "bundler", "~> 2.4"
   spec.add_development_dependency "rake"
-  spec.add_development_dependency 'rspec', '~> 2.14'
+  spec.add_development_dependency 'rspec', '~> 3.12'
   spec.add_development_dependency 'yard'
   spec.add_development_dependency 'redcarpet'
+  spec.add_development_dependency 'standard'
 end
