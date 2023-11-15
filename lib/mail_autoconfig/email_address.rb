@@ -38,7 +38,7 @@ module MailAutoconfig
     # @return [String] the domain of the pimary MX record for this address
     def primary_mx_domain
       # Not very nice to 2nd level domains
-      @primary_mx_domain ||= (mx_records.first.split(".")[-2..-1].join(".") unless mx_records.empty?)
+      @primary_mx_domain ||= (mx_records.first.split(".")[-2..].join(".") unless mx_records.empty?)
     end
 
     private
