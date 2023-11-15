@@ -19,7 +19,6 @@ Gem::Specification.new do |spec|
   spec.add_dependency "faraday"
   spec.add_development_dependency "bundler", "~> 2.4"
   spec.add_development_dependency "rake"
-  spec.add_development_dependency "rspec", "~> 3.12"
   spec.add_development_dependency "yard"
   spec.add_development_dependency "redcarpet"
   spec.add_development_dependency "standard"
