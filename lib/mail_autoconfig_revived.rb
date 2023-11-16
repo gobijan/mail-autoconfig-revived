@@ -1,1 +1,1 @@
-require 'mail_autoconfig'
+require "mail_autoconfig"
