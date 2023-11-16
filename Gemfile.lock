@@ -1,8 +1,8 @@
 PATH
   remote: .
   specs:
-    mail_autoconfig (0.0.2)
-      faraday
+    mail_autoconfig_revived (0.0.3)
+      faraday (~> 2.7)
       nokogiri (~> 1.15)
 
 GEM
@@ -70,11 +70,11 @@ PLATFORMS
 
 DEPENDENCIES
   bundler (~> 2.4)
-  mail_autoconfig!
-  rake
-  redcarpet
-  standard
-  yard
+  mail_autoconfig_revived!
+  rake (~> 13.1)
+  redcarpet (~> 3.6)
+  standard (~> 1.32)
+  yard (~> 0.9)
 
 BUNDLED WITH
    2.4.22

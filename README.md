@@ -1,8 +1,8 @@
 # Mail Autoconfig Revived
 
-This fork revives mail_autoconfig, which was abandoned by the original author.
+This fork revives mail_autoconfig for my email API product [Sunnybox.io](https://sunnybox.io).
 
-A ruby gem to detect and parse any Thunderbird autoconfig file for a domain. Includes a copy of the Mozilla ISPDB.
+A ruby gem to detect and parse any Thunderbird autoconfig file for a domain. Includes a copy of the Mozilla ISPDB (Nov 2023).
 
 For general information about autoconf visit (https://developer.mozilla.org/en-US/docs/Mozilla/Thunderbird/Autoconfiguration),
 for the autoconfig schema you should have a look at (https://wiki.mozilla.org/Thunderbird:Autoconfiguration:ConfigFileFormat).
