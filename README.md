@@ -3,7 +3,7 @@
 This fork revives mail_autoconfig for my Email-API [Sunnybox.io](https://sunnybox.io).
 It has been updated to support the latest Mozilla ISPDB location and format.
 I plan on adding new features like DNS SRV Records and general DNS lookups.
----
+Right now it works as a drop-in replacement.
 
 A ruby gem to detect and parse any Thunderbird autoconfig file for a domain. Includes a copy of the Mozilla ISPDB (Nov 2023).
 
