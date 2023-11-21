@@ -5,7 +5,7 @@ It has been updated to support the latest Mozilla ISPDB location and format.
 I plan on adding new features like DNS SRV Records and general DNS lookups.
 Right now it works as a drop-in replacement.
 
-A ruby gem to detect and parse any Thunderbird autoconfig file for a domain. Includes a copy of the Mozilla ISPDB (Nov 2023).
+A Ruby gem to detect and parse any Thunderbird autoconfig file for a domain. Includes a copy of the Mozilla ISPDB (Nov 2023).
 
 For general information about autoconf visit (https://developer.mozilla.org/en-US/docs/Mozilla/Thunderbird/Autoconfiguration),
 for the autoconfig schema you should have a look at (https://wiki.mozilla.org/Thunderbird:Autoconfiguration:ConfigFileFormat).
@@ -43,14 +43,14 @@ outnound_server.hostname
 => "smtp.googlemail.com"
 ```
 
-When searching for a configuration, autoconfig first looks to it's local database for the domain of the address,
+When searching for a configuration, autoconfig first looks in its local database for the domain of the address,
 if this fails it will check `http://autoconfig.#{domain}/mail/config-v1.1.xml` and then 
 `http://#{domain}/.well-known/autoconfig/mail/config-v1.1.xml`. If both of these fail, Autoconfig will then look up
 the MX records for the address, and perform the same searches on the domain of the primary MX record.
 
 ### Updating the database
-You may wish to update the database at some point to fetch the latest from Mozilla's ISPDB,
-just run the rake task `rake fetch_ispdb`.
+You may wish to update the database at some point to fetch the latest from Mozilla's ISPDB.
+Just run the rake task `rake fetch_ispdb`.
 
 ## Contributing
 
